@@ -1,0 +1,22 @@
+form {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  box-shadow: peachpuff;
+  padding: 2em;
+  box-sizing: initial;
+  width: 500px;
+  align-items: center;
+}
+button {
+  width: 200px;
+}
+
+div.btn-outline-success{
+  color: green;
+  align-items: center;
+}
+.container{
+  display: flex;
+  justify-content: center;
+}

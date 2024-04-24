@@ -1,0 +1,38 @@
+<h2>Work Tasks</h2>
+
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th>Task Name</th>
+    <th>Description</th>
+    <th>Deadline</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let task of tasks">
+    <td>{{ task.taskName }}</td>
+    <td>{{ task.desc }}</td>
+    <td>{{ task.due }}</td>
+    <td><button class="btn btn-outline-success"></button><button class="btn btn-outline-danger"></button></td>
+  </tr>
+  </tbody>
+</table>
+
+<h3>Add Tasks</h3>
+<form [formGroup]="tasksForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="taskName">Task Name:</label>
+    <input type="text" class="form-control" id="taskName" formControlName="taskName" maxlength="10" required>
+  </div>
+  <div class="form-group">
+    <label for="desc">Description:</label>
+    <input type="text" class="form-control" id="desc" formControlName="desc" maxlength="40" required>
+  </div>
+  <div class="form-group">
+    <label for="due">Deadline:</label>
+    <input type="date" class="form-control" id="due" formControlName="due" maxlength="25" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<div *ngIf="errorMsg" class="alert alert-danger">{{ errorMsg }}</div>
